@@ -22,6 +22,7 @@ for line in text.splitlines():
     total += middle
 
 print(total)
+swaps  = 0
 
 def check_line(line):
     for item in line:
@@ -31,10 +32,13 @@ def check_line(line):
                 j = line.index(item)
                 if i > j:
                     line[i], line[j] = line[j], line[i]
+                    global swaps
+                    swaps += 1
                     return False, tuple(x for x in line)
     return True, None
 
 total = 0
+
 while incorrect:
     new_incorrect = set()
     for line in incorrect:
@@ -46,6 +50,6 @@ while incorrect:
         else:
             new_incorrect.add(addition)
     incorrect = new_incorrect
-    print(len(incorrect))
 
 print(total)
+print(f"swaps {swaps}")
