@@ -71,5 +71,6 @@ result = 0
 for (p, i), (q ,j) in combinations(distance.items(), 2):
     d = abs((p-q).real) + abs((p-q).imag)
     if d < 21 and j - i - d >= 100:
+        print(result)
         result += 1
 print(result)
