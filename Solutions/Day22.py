@@ -12,6 +12,7 @@ def get_2000(secret):
 
 def changes(price):
     return [price[x+1] - price[x] for x in range(len(price) - 1)]
+
 def scores(price, change):
     answer = {}
     for x in range(len(change) - 3):
